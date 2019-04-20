@@ -1,0 +1,250 @@
+
+/*!
+ * Menu
+ */
+header {
+	.menu {
+		list-style-type: none;
+		padding: 0;
+
+		li {
+			display: inline;
+
+			a {
+				position: relative;
+				color: #fff;
+				font-weight: 700;
+				font-size: 18px;
+				text-decoration: none;
+				padding: 0 16px;
+
+				transition: color 0.3s, background-color 0.3s;
+			}
+
+			a:hover {
+				/*color: $color_accent;*/
+			}
+
+			a:before {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 2px;
+				bottom: -4px;
+				left: 0;
+				background-color: $color_accent;
+				visibility: hidden;
+				-webkit-transform: scaleX(0);
+				transform: scaleX(0);
+				-webkit-transition: all 0.2s ease-in-out 0s;
+				transition: all 0.2s ease-in-out 0s;
+			}
+
+			a:hover:before {
+				visibility: visible;
+				-webkit-transform: scaleX(1);
+				transform: scaleX(1);
+			}
+		}
+	}
+
+	.logo-link {
+		position: absolute;
+		left: 0;
+		z-index: 10;
+		background-color: rgba(8, 8, 8, 1);
+		height: $navbar_height + 44;
+
+		transition: height 0.3s, left 0.3s;
+
+		#sheee-logo {
+			max-width: $navbar_height * 1.5;
+			margin: 20px 12px;
+
+			transition: max-width 0.3s, margin 0.3s;
+		}
+	}
+
+	.logo-link:hover {
+		height: ($navbar_height + 44) + 7;
+
+		#sheee-logo {
+			margin-top: 27px;
+		}
+	}
+
+	#primary-menu-left,
+	#primary-menu-right {
+		margin: 0;
+	}
+
+	.menu-left {
+		text-align: right;
+		margin: 0 2em 0;
+		line-height: $navbar_height;
+	}
+
+	.menu-right {
+		text-align: left;
+		margin: 0 0 0 2em;
+		line-height: $navbar_height;
+	}
+}
+
+@include media("<=desktop") {
+	header {
+		.menu-toggle {
+			display: block;
+		}
+
+		.menu {
+			li {
+				display: block;
+				line-height: 2.2;
+				text-align: right;
+
+				a {
+					display: block;
+				}
+
+				a:hover {
+					color: #fff;
+					background-color: $color_accent;
+				}
+
+				a:hover:before {
+					visibility: hidden;
+				}
+			}
+		}
+	}
+}
+
+/*!
+ * Color Pallettes
+ */
+.has-sheee-accent-pink-color {
+	color: $color_accent;
+}
+.has-sheee-accent-pink-background-color {
+	background-color: $color_accent;
+}
+.has-sheee-dark-pink-color {
+	color: $color_accent_dark;
+}
+.has-sheee-dark-pink-background-color {
+	background-color: $color_accent_dark;
+}
+.has-sheee-light-gray-color {
+	color: $color_text_dark;
+}
+.has-sheee-light-gray-background-color {
+	background-color: $color_text_dark;
+}
+.has-sheee-dark-gray-color {
+	color: $color_text_light;
+}
+.has-sheee-dark-gray-background-color {
+	background-color: $color_text_light;
+}
+
+
+/*!
+ * Gutenberg elements
+ */
+
+.wp-block-columns {
+	justify-content: center;
+}
+
+.wp-block-columns.has-2-columns {
+	.wp-block-column {
+		max-width: ($content_width / 2 ) - 64;
+		margin-left: 32px;
+		margin-right: 32px;
+	}
+}
+
+
+/*!
+ * Easy Testimonial
+ */
+
+.easy-t-slideshow-wrap {
+	max-width: ($content_width) - 128;
+	margin: 2em auto;
+	padding: 0 32px;
+	background-color: #821F52;
+	
+
+	.cycle-slideshow {
+		margin: 2em 32px;
+		color: white;
+		font-size: 1.4em;
+		font-style: italic;
+		font-weight: 300;
+	}
+}
+
+/*!
+ * Forms
+ */
+.site-footer {
+	input {
+		padding: .4em .8em;
+		background: #111;
+		border: 1px solid #ba2d74;
+		color: #dcdcdc;
+		border-radius: 2px;
+	}
+
+	.menu {
+		margin: 3em 0 0 0; 
+		padding: 0;
+
+		li {
+			list-style-type: none;
+		}
+
+		a {
+			color: $color_text_dark;
+			text-decoration: none;
+		}
+	}
+}
+
+/*!
+ * Embed Youtube
+ */
+
+.wp-block-embed-youtube .wp-block-embed__wrapper {
+	max-width: $content_width - 64;
+	margin: 0 auto;
+	
+	iframe {
+		width: 100%;
+		
+	}
+}
+
+/*! 
+ * Rows BG
+ */
+.bg-audience-01 {
+	background: url(img/bg-audience-01.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 2em 0;
+ }
+
+/*!
+ * Classes
+ */
+
+.news {
+	margin:0;
+	padding: .8em 0;
+	font-weight: 700;
+}
