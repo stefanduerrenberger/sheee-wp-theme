@@ -33,6 +33,7 @@ Uses Normalize: https://necolas.github.io/normalize.css/
 	## Galleries
 --------------------------------------------------------------*/
 /* #ec008c */
+/* #821F52 */
 /* #53062a */
 /* #ffffff */
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
@@ -459,31 +460,24 @@ body {
   letter-spacing: 0.07em; }
 
 #colophon {
-  display: grid;
-  grid-gap: 64px;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  background-color: rgba(0, 0, 0, 0.5);
-  min-height: 4em;
-  padding-bottom: 4em;
-  color: #53062a; }
-  #colophon .footer-col1 {
-    grid-column: 1;
-    grid-row: 1;
-    width: 316px;
-    justify-self: end; }
-  #colophon .footer-col2 {
-    grid-column: 2;
-    grid-row: 1;
-    width: 316px; }
+  background-color: #ec008c;
+  min-height: 2em;
+  padding: 1em 0 0 0;
+  color: white; }
+  #colophon .widget-area {
+    width: 760px;
+    margin: 2em auto; }
+    #colophon .widget-area p {
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 0.07em;
+      font-size: 14px; }
+  #colophon .footer-part2 {
+    background-color: #fff;
+    color: #53062a;
+    min-height: 1em;
+    text-align: center; }
 
-@media (max-width: 1024px) {
-  #colophon {
-    grid-template-columns: 1fr;
-    padding: 0 32px; }
-    #colophon .footer-col2 {
-      grid-column: 1;
-      grid-row: 2; } }
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -573,28 +567,21 @@ header ul.menu {
 /*!
  * Color Pallettes
  */
-.has-sheee-accent-pink-color {
+#content .has-sheee-accent-pink-color {
   color: #ec008c; }
-
-.has-sheee-accent-pink-background-color {
+#content .has-sheee-accent-pink-background-color {
   background-color: #ec008c; }
-
-.has-sheee-dark-pink-color {
-  color: #ec008c; }
-
-.has-sheee-dark-pink-background-color {
-  background-color: #ec008c; }
-
-.has-sheee-light-gray-color {
-  color: #53062a; }
-
-.has-sheee-light-gray-background-color {
-  background-color: #53062a; }
-
-.has-sheee-dark-gray-color {
+#content .has-sheee-dark-pink-color {
+  color: #821F52; }
+#content .has-sheee-dark-pink-background-color {
+  background-color: #821F52; }
+#content .has-sheee-light-gray-color {
   color: white; }
-
-.has-sheee-dark-gray-background-color {
+#content .has-sheee-light-gray-background-color {
+  background-color: #53062a; }
+#content .has-sheee-dark-gray-color {
+  color: white; }
+#content .has-sheee-dark-gray-background-color {
   background-color: white; }
 
 /*!
@@ -700,10 +687,17 @@ header ul.menu {
 /*!
  * Classes
  */
-.news {
-  margin: 0;
+#content .news {
+  margin-top: 0;
   padding: .8em 0;
-  font-weight: 700; }
+  font-weight: 400;
+  width: 100%;
+  max-width: none;
+  text-align: center; }
+  #content .news a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600; }
 
 /*--------------------------------------------------------------
 # Forms

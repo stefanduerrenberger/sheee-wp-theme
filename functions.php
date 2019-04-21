@@ -41,10 +41,8 @@ if ( ! function_exists( 'sheee2_setup' ) ) {
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary Left', 'sheee2' ),
-			'menu-2' => esc_html__( 'Primary Right', 'sheee2' ),
-			'menu-3' => esc_html__( 'Footer Left', 'sheee2' ),
-			'menu-4' => esc_html__( 'Footer Right', 'sheee2' ),
+			'menu-1' => esc_html__( 'Primary', 'sheee2' ),
+			'menu-3' => esc_html__( 'Footer', 'sheee2' ),
 		) );
 
 		/*

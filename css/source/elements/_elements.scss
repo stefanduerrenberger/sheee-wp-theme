@@ -128,38 +128,39 @@ header {
 /*!
  * Color Pallettes
  */
-.has-sheee-accent-pink-color {
-    color: $color_accent;
-}
+#content {
+    .has-sheee-accent-pink-color {
+        color: $color_accent;
+    }
 
-.has-sheee-accent-pink-background-color {
-    background-color: $color_accent;
-}
+    .has-sheee-accent-pink-background-color {
+        background-color: $color_accent;
+    }
 
-.has-sheee-dark-pink-color {
-    color: $color_accent;
-}
+    .has-sheee-dark-pink-color {
+        color: $color_accent_dark;
+    }
 
-.has-sheee-dark-pink-background-color {
-    background-color: $color_accent;
-}
+    .has-sheee-dark-pink-background-color {
+        background-color: $color_accent_dark;
+    }
 
-.has-sheee-light-gray-color {
-    color: $color_text_dark;
-}
+    .has-sheee-light-gray-color {
+        color: $color_text_light;
+    }
 
-.has-sheee-light-gray-background-color {
-    background-color: $color_text_dark;
-}
+    .has-sheee-light-gray-background-color {
+        background-color: $color_text_dark;
+    }
 
-.has-sheee-dark-gray-color {
-    color: $color_text_light;
-}
+    .has-sheee-dark-gray-color {
+        color: $color_text_light;
+    }
 
-.has-sheee-dark-gray-background-color {
-    background-color: $color_text_light;
+    .has-sheee-dark-gray-background-color {
+        background-color: $color_text_light;
+    }
 }
-
 
 /*!
  * Gutenberg elements
@@ -310,9 +311,19 @@ header {
 /*!
  * Classes
  */
+#content {
+    .news {
+        margin-top: 0;
+        padding: .8em 0;
+        font-weight: 400;
+        width: 100%;
+        max-width: none;
+        text-align: center;
 
-.news {
-    margin: 0;
-    padding: .8em 0;
-    font-weight: 700;
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
 }
