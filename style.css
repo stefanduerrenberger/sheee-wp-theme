@@ -518,6 +518,12 @@ header ul.menu {
       visibility: visible;
       -webkit-transform: scaleX(1);
       transform: scaleX(1); }
+header #sheeeLogo {
+  position: absolute;
+  max-width: 200px;
+  z-index: 99;
+  top: 100px;
+  left: 20px; }
 
 @media (max-width: 1024px) {
   header .menu-toggle {

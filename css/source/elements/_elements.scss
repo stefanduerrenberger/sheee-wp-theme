@@ -50,6 +50,13 @@ header {
 
         }
     }
+    #sheeeLogo {
+        position: absolute;
+        max-width: 200px;
+        z-index: 99;
+        top: 100px;
+        left: 20px;
+    }
 }
 
 @include media("<=desktop") {
