@@ -31,7 +31,7 @@
 				?>
             </div>
         </nav><!-- #site-navigation -->
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Sheee-Logo-compressed.svg" alt="Sheee Logo" id="sheeeLogo">
+        <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Sheee-Logo-compressed.svg" alt="Sheee Logo" id="sheeeLogo"></a>
     </header><!-- #masthead -->
 
     <div id="content" class="site-content">
