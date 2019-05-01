@@ -162,3 +162,8 @@ add_action( 'wp_enqueue_scripts', 'sheee2_scripts' );
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Custom Gutenberg Blocks
+ */
+require get_template_directory() . '/inc/gutenberg-blocks.php';

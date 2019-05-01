@@ -50,11 +50,12 @@ header {
 
         }
     }
+
     #sheeeLogo {
         position: absolute;
         max-width: 200px;
         z-index: 99;
-        top: 100px;
+        top: 110px;
         left: 20px;
     }
 }
@@ -108,6 +109,7 @@ header {
         background-color: $color_accent;
         transition: all 0.2s ease-in-out 0s;
     }
+
     .wp-block-button:hover a:hover {
         background-color: $color_text_dark;
     }
@@ -128,6 +130,18 @@ header {
     .amazingaudioplayer-tracklist {
         max-width: $content_width;
         margin: 0 auto;
+    }
+}
+
+/* Youtube Video */
+#content {
+    .wp-block-embed-youtube {
+        background-color: #000;
+        margin: 2em 0;
+
+        .wp-block-embed__wrapper {
+            max-width: $content_width_wide;
+        }
     }
 }
 
@@ -177,13 +191,44 @@ header {
     justify-content: center;
 }
 
-.wp-block-columns.has-2-columns {
+.wp-block-columns {
     .wp-block-column {
         max-width: ($content_width / 2 ) - 64;
         margin-left: 32px;
         margin-right: 32px;
     }
 }
+
+#content .sheee-formation {
+    display: block;
+    padding-top: 4em;
+    text-decoration: none;
+
+    h2 {
+        background-color: $color_accent_transparent;
+        padding: 1em 0;
+        text-align: center;
+        color: #fff;
+
+        transition: color 0.3s, background-color 0.3s;
+
+        span {
+            font-size: .5em;
+        }
+    }
+}
+
+#content .sheee-formation:hover {
+    h2 {
+        background-color: $color_accent;
+    }
+}
+
+/*!
+ * Forms
+ */
+
+
 
 
 /*!
