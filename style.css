@@ -612,23 +612,6 @@ header #sheeeLogo {
   display: block;
   padding-top: 4em;
   text-decoration: none; }
-  #content .sheee-formation h2:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    bottom: 0.7em;
-    left: 0;
-    background-color: #fff;
-    visibility: hidden;
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transition: all 0.2s ease-in-out 0s;
-    transition: all 0.2s ease-in-out 0s; }
-  #content .sheee-formation h2:hover:before {
-    visibility: visible;
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1); }
   #content .sheee-formation h2 {
     background-color: rgba(210, 22, 134, 0.7);
     padding: 1em 0;
@@ -640,6 +623,33 @@ header #sheeeLogo {
 
 #content .sheee-formation:hover h2 {
   background-color: #d21686; }
+
+/*!
+ * Forms
+ */
+#content form .mc4wp-form-fields label {
+  display: none; }
+#content form input[type=text],
+#content form input[type=email] {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #821F52;
+  font-weight: 700; }
+#content form input::placeholder {
+  color: #821F52;
+  font-weight: 400; }
+#content form input[type=submit] {
+  border: none;
+  background-color: #d21686;
+  color: white;
+  padding: 1em 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 400;
+  transition: color 0.3s, background-color 0.3s; }
+#content form input[type=submit]:hover {
+  background-color: #821F52;
+  cursor: pointer; }
 
 /*!
  * Easy Testimonial

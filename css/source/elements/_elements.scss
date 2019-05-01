@@ -228,7 +228,41 @@ header {
  * Forms
  */
 
+#content form {
+    .mc4wp-form-fields label {
+        display: none;
+    }
 
+    input[type=text],
+    input[type=email] {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid $color_accent_dark;
+        font-weight: 700;
+    }
+
+    input::placeholder {
+        color: $color_accent_dark;
+        font-weight: 400;
+    }
+
+    input[type=submit] {
+        border: none;
+        background-color: $color_accent;
+        color: $color_text_light;
+        padding: 1em 2em;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        font-weight: 400;
+
+        transition: color 0.3s, background-color 0.3s;
+    }
+
+    input[type=submit]:hover {
+        background-color: $color_accent_dark;
+        cursor: pointer;
+    }
+}
 
 
 /*!
