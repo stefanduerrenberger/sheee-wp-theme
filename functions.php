@@ -146,9 +146,13 @@ add_action( 'widgets_init', 'sheee2_widgets_init' );
  * Enqueue scripts and styles.
  */
 function sheee2_scripts() {
-	wp_enqueue_style( 'sheee2-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.8.2/css/all.css', null, '5.8.2' );
+
+	wp_enqueue_style( 'sheee2-style', get_stylesheet_uri(), 'font-awesome' );
 
 	wp_enqueue_script( 'sheee2-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'sheee2-general', get_template_directory_uri() . '/js/sheee.js' );
 
 	wp_enqueue_script( 'sheee2-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 

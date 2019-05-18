@@ -1,4 +1,58 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 
-$font_main:  'Lato', sans-serif;
+$font_main: 'Lato', sans-serif;
 $font_line-height-body: 1.5;
+
+a {
+    outline: 0;
+}
+
+.site-content {
+    a:not(.wp-block-button__link) {
+        color: $color_accent;
+        text-decoration: none;
+    }
+
+    a:hover:not(.wp-block-button__link) {
+        color: $color_accent_dark;
+        text-decoration: underline;
+    }
+
+    a.wp-block-file__button {
+
+        display: inline-block;
+        margin: 0 1em 0 0;
+
+        color: #fff;
+        background-color: $color_accent;
+        line-height: 2em;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 0;
+    }
+
+    a.wp-block-file__button:hover {
+        color: #fff;
+        background-color: $color_accent_dark;
+        text-decoration: none;
+    }
+
+    .wp-block-file a:not(.wp-block-file__button) {
+        line-height: 2.4em;
+    }
+
+    .wp-block-file a {
+        padding: 1em 2em;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 13px;
+        color: #fff;
+        background-color: $color_accent;
+    }
+
+    .wp-block-file a:hover {
+        color: #fff;
+        background-color: $color_accent_dark;
+        text-decoration: none;
+    }
+}

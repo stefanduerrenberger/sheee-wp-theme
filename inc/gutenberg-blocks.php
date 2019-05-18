@@ -250,14 +250,14 @@ if ( function_exists( 'acf_register_block' ) ) {
 		'name'            => 'sheeeblock-imagebanner',
 		'title'           => __( 'Sheee Image Banner' ),
 		'description'     => __( 'Sheee Image Banner' ),
-		'render_callback' => 'sheee_block_imagebanne_render'
+		'render_callback' => 'sheee_block_imagebanner_render'
 		//'category'		=> '',
 		//'icon'			=> '',
 		//'keywords'		=> array(),
 	) );
 }
 
-function sheee_block_imagebanne_render() {
+function sheee_block_imagebanner_render() {
 	$fields = get_fields();
 
 	$image = wp_get_attachment_url( $fields['image'] );
@@ -277,3 +277,30 @@ function sheee_block_imagebanne_render() {
     </div>
 	<?php
 }
+
+
+// Change output of File block, put the button before the text.
+function sheee_file_block_render( $attributes, $content ) {
+
+	$d = new DOMDocument();
+	$d->loadHTML('<?xml encoding="utf-8" ?>' . $content);
+
+	$links = $d->getElementsByTagName('a');
+
+	// Now grab the two link tags and switch them in the content
+	$textLink = $links->item(1);
+	$buttonLink = $links->item(0);
+
+	$textLink->insertBefore($buttonLink);
+
+    // switched output
+	return $d->saveHTML();
+}
+
+function sheee_register_file_block() {
+	register_block_type( 'core/file', array(
+		'render_callback' => 'sheee_file_block_render',
+	) );
+}
+
+//add_action( 'init', 'sheee_register_file_block' );

@@ -9,7 +9,10 @@ body {
 }
 
 #masthead {
-    background-color: $color_accent;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background-color: $color_accent_header;
     color: $color_text_light;
 
     .main-navigation {
@@ -132,6 +135,7 @@ body {
 @import "header";
 
 #content {
+
     h2,
     p {
         max-width: $content_width;
@@ -147,6 +151,13 @@ body {
         text-transform: uppercase;
         font-size: 1.4em;
         letter-spacing: 0.07em;
+    }
+}
+
+#content .wp-block-columns {
+    p,
+    h2 {
+        margin-left: 0;
     }
 }
 

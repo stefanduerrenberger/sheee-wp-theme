@@ -42,6 +42,7 @@ header {
                 transition: all 0.2s ease-in-out 0s;
             }
 
+
             a:hover:before {
                 visibility: visible;
                 -webkit-transform: scaleX(1);
@@ -49,13 +50,25 @@ header {
             }
 
         }
+
+        li.current_page_item {
+            a:before {
+                visibility: visible;
+                -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+            }
+
+            a {
+                font-weight: 700;
+            }
+        }
     }
 
     #sheeeLogo {
         position: absolute;
-        max-width: 200px;
+        max-width: 160px;
         z-index: 50;
-        top: 110px;
+        top: 40px;
         left: 20px;
     }
 }
@@ -121,21 +134,49 @@ header {
     }
 }
 
-/** Audio Player */
-.wonderpluginaudio {
+/** Testimonial */
+.testimonial-position:after {
+    display: none;
+}
+
+.easy-t-cycle-pager span.cycle-pager-active {
+    color: $color_accent;
+}
+
+/* Player Columns */
+.player-column.wp-block-columns {
+    .wp-block-column {
+        max-width: none;
+    }
+
+    .wp-block-column:first-child {
+        max-width: 40px;
+    }
+}
+
+/* Carousel slider */
+#content .carousel-slider-outer {
     max-width: $content_width_wide;
     margin: 0 auto;
-    padding: 4em 0;
-    min-height: 250px;
 
-    background: url(img/bg-audience.jpg) no-repeat center center;
-    -webkit-background-size: cover;
-    background-size: cover;
+    a:hover {
+        text-decoration: none;
+    }
 
-    .amazingaudioplayer-player-wrapper,
-    .amazingaudioplayer-tracklist {
-        max-width: $content_width;
-        margin: 0 auto;
+    .carousel-slider__caption {
+        .title {
+            text-align: left;
+            color: $color_text_dark;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .caption {
+            text-align: left;
+            color: $color_text_dark;
+            font-weight: 400;
+            font-size: 16px;
+        }
     }
 }
 
@@ -319,7 +360,12 @@ header {
     li {
         color: $color_text_light;
         font-weight: 700;
+        line-height: 1.8em;
     }
+}
+
+#content .wp-block-cover {
+    margin-bottom: 3em;
 }
 
 /*!
@@ -433,7 +479,7 @@ header {
 #content .easy-t-slideshow-wrap .cycle-slideshow::after {
     content: "»";
     position: absolute;
-    top: -0.38em;
+    top: -0.42em;
     right: 0;
     font-size: 5em;
     color: $color_accent;
@@ -453,10 +499,15 @@ header {
 
     .menu {
         margin: 3em 0 0 0;
-        padding: 0;
+        padding: 1em 0 0 0;
 
         li {
             list-style-type: none;
+            display: inline;
+
+            a {
+                padding: 0 .5em;
+            }
         }
 
         a {

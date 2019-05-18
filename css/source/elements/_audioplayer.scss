@@ -1,27 +1,39 @@
 
 #content {
-    .wonderpluginaudio {
+    .wonderpluginaudio:not([data-skin="blueplaystop"]) {
         width: 80% !important;
-    }
+        max-width: $content_width_wide;
+        margin: 0 auto;
+        padding: 4em 0;
+        min-height: 250px;
 
-    .amazingaudioplayer-title,
-    .amazingaudioplayer-time {
-        display: none;
-    }
+        background: url(img/bg-audience.jpg) no-repeat center center;
+        -webkit-background-size: cover;
+        background-size: cover;
 
-    .amazingaudioplayer-play,
-    .amazingaudioplayer-pause {
-        max-width: 17%;
-        float: left;
-    }
+        .amazingaudioplayer-title,
+        .amazingaudioplayer-info,
+        .amazingaudioplayer-time {
+            display: none;
+        }
 
-    .amazingaudioplayer-play:hover,
-    .amazingaudioplayer-pause:hover {
-        background-position-y: top !important; /* remove hover effect */
-    }
+        .amazingaudioplayer-play,
+        .amazingaudioplayer-pause {
+            max-width: 17%;
+            float: left;
+        }
 
+        .amazingaudioplayer-play:hover,
+        .amazingaudioplayer-pause:hover {
+            background-position-y: top !important; /* remove hover effect */
+        }
 
-    .wonderpluginaudio {
+        .amazingaudioplayer-player-wrapper,
+        .amazingaudioplayer-tracklist {
+            max-width: $content_width;
+            margin: 0 auto;
+        }
+
         .amazingaudioplayer-progress {
             position: relative;
             width: 83%;
@@ -53,39 +65,87 @@
             border-radius: 7.5px;
             background-color: $color_accent;
         }
-    }
 
-    .amazingaudioplayer-player-wrapper {
-        position: relative;
-        top: 2em;
-        width: 60%;
-    }
+        .amazingaudioplayer-player-wrapper {
+            position: relative;
+            top: 2em;
+            width: 60%;
+        }
 
-    .amazingaudioplayer-tracks-wrapper {
-        width: 100%;
-    }
+        .amazingaudioplayer-tracks-wrapper {
+            width: 100%;
+        }
 
-    .amazingaudioplayer-tracklist {
-        width: 60%;
-        min-height: 120px;
-        background-color: rgba(255, 255, 255, .5);
-        padding: 7em 4em 1em 4em;
-        text-align: center;
+        .amazingaudioplayer-tracklist {
+            width: 60%;
+            min-height: 120px;
+            background-color: rgba(255, 255, 255, .5);
+            padding: 7em 4em 1em 4em;
+            text-align: center;
 
-        ul {
-            list-style-type: none;
-            cursor: pointer;
-            padding: 0;
-            margin: 0;
-
-            li {
+            ul {
+                list-style-type: none;
+                cursor: pointer;
+                padding: 0;
                 margin: 0;
-            }
 
-            li.amazingaudioplayer-track-item-active {
-                color: $color_accent;
+                li {
+                    margin: 0;
+                    font-weight: 700;
+
+                    span {
+                        padding-left: .5em;
+                        font-weight: 700;
+                        color: $color_accent;
+                        letter-spacing: 0.07em;
+                    }
+                }
+
+                li.amazingaudioplayer-track-item-active {
+                    color: $color_accent;
+                }
+
+                li.amazingaudioplayer-track-item-active:not(.amazingaudioplayer-track-item-hoverover) div::before {
+                    content: "\203A";
+                    display: inline-block;
+                    font-weight: 700;
+                    padding-right: .5em;
+                }
+
+                li.amazingaudioplayer-track-item-hover div::before {
+                    display: none;
+                }
             }
         }
+    }
+
+    .wonderpluginaudio[data-skin="blueplaystop"] {
+        .amazingaudioplayer-play:hover,
+        .amazingaudioplayer-pause:hover {
+            background-position-y: top !important; /* remove hover effect */
+        }
+
+        .amazingaudioplayer-pause {
+            width: 90px !important;
+        }
+
+        .amazingaudioplayer-time {
+            display: none;
+            width: 3em;
+            height: 1.5em;
+            padding-left: 2em;
+            margin-top: -1em;
+            font-weight: 700;
+            overflow: hidden;
+            color: $color_accent;
+        }
+    }
+}
+
+.page-id-207 #content {
+    .wonderpluginaudio:not([data-skin="blueplaystop"]) {
+        background: url(img/bg_wedding_symbol.jpg) no-repeat center center;
+        background-size: cover;
     }
 }
 
