@@ -51,7 +51,8 @@ header {
 
         }
 
-        li.current_page_item {
+        li.current_page_item,
+        li.current-page-ancestor {
             a:before {
                 visibility: visible;
                 -webkit-transform: scaleX(1);
