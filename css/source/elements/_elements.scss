@@ -69,7 +69,7 @@ header {
         position: absolute;
         max-width: 160px;
         z-index: 50;
-        top: 80px;
+        top: 40px;
         left: 20px;
     }
 }
@@ -311,6 +311,7 @@ header {
     background-size: cover;
     background-position: center center;
     text-decoration: none;
+    font-size: .9em;
 
     .overlay {
         padding: 2em 0 1em 0;
@@ -323,12 +324,15 @@ header {
 
         a {
             float: right;
-            padding: 1em 2em;
+            margin: 0 0 3em 2em;
+            padding: 0 2em;
             background-color: $color_accent_dark;
             color: $color_text_light;
             text-decoration: none;
             text-transform: uppercase;
             font-weight: 700;
+            line-height: 3rem;
+            letter-spacing: 0.07em;
 
             transition: color 0.3s, background-color 0.3s;
         }
@@ -340,6 +344,9 @@ header {
 
     h2 {
         margin-top: 0;
+        line-height: 3rem;
+        font-weight: 700;
+        letter-spacing: 0.07em;
     }
 
     h2,
@@ -352,6 +359,50 @@ header {
 #content .sheee-imagebanner.wide-width {
     max-width: $content_width_wide;
     margin: 4em auto;
+}
+
+@include media("<=desktop") {
+    #content .sheee-imagebanner {
+        font-size: .9em;
+
+        .cta-wrapper {
+            padding: 0 1em;
+
+            a {
+
+
+                a:hover {
+                }
+            }
+        }
+    }
+}
+
+@include media("<=tablet") {
+    #content .sheee-imagebanner {
+        font-size: .8em;
+
+        .cta-wrapper {
+            padding: 0 1em;
+
+            a {
+                float: none;
+                display: block;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+
+                text-align: center;
+
+                a:hover {
+                }
+            }
+        }
+
+        h2 {
+            text-align: center;
+        }
+    }
 }
 
 #content ul.bg-pink {
