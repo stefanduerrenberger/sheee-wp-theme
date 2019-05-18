@@ -64,6 +64,40 @@ if ( function_exists( 'acf_add_local_field_group' ) ) {
 				'max_size'          => '',
 				'mime_types'        => '',
 			),
+			array(
+				'key'               => 'field_5cc99010e8547',
+				'label'             => 'Text',
+				'name'              => 'text',
+				'type'              => 'wysiwyg',
+				'instructions'      => '',
+				'required'          => 0,
+				'conditional_logic' => 0,
+				'wrapper'           => array(
+					'width' => '',
+					'class' => '',
+					'id'    => '',
+				),
+				'default_value'     => '',
+				'tabs'              => 'all',
+				'toolbar'           => 'basic',
+				'media_upload'      => 0,
+				'delay'             => 0,
+			),
+			array(
+				'key'               => 'field_5cc9947476bc7',
+				'label'             => 'CTA Button',
+				'name'              => 'cta_button',
+				'type'              => 'link',
+				'instructions'      => '',
+				'required'          => 0,
+				'conditional_logic' => 0,
+				'wrapper'           => array(
+					'width' => '',
+					'class' => '',
+					'id'    => '',
+				),
+				'return_format'     => 'array',
+			),
 		),
 		'location'              => array(
 			array(
@@ -105,10 +139,17 @@ function sheee_block_formation_render() {
 
 
 	?>
-    <a class="sheee-formation" style="background-image: url(<?php echo $image[0] ?>);"
-       href="<?php echo $fields['link'] ?>">
-        <h2><span class="sup">Sheee</span><br><?php echo $fields['formation'] ?></h2>
-    </a>
+    <div class="sheee-formation">
+        <a class="image-link" style="background-image: url(<?php echo $image[0] ?>);"
+           href="<?php echo $fields['link'] ?>">
+            <h2><span class="sup">Sheee</span><br><?php echo $fields['formation'] ?></h2>
+        </a>
+		<?php echo $fields['text'] ?>
+    </div>
+    <div class="wp-block-button is-style-squared">
+        <a class="wp-block-button__link" href="<?php echo $fields['cta_button']['url'] ?>"
+           target="<?php echo $fields['cta_button']['target'] ?>"><?php echo $fields['cta_button']['title'] ?></a>
+    </div>
 	<?php
 }
 
@@ -283,17 +324,17 @@ function sheee_block_imagebanner_render() {
 function sheee_file_block_render( $attributes, $content ) {
 
 	$d = new DOMDocument();
-	$d->loadHTML('<?xml encoding="utf-8" ?>' . $content);
+	$d->loadHTML( '<?xml encoding="utf-8" ?>' . $content );
 
-	$links = $d->getElementsByTagName('a');
+	$links = $d->getElementsByTagName( 'a' );
 
 	// Now grab the two link tags and switch them in the content
-	$textLink = $links->item(1);
-	$buttonLink = $links->item(0);
+	$textLink   = $links->item( 1 );
+	$buttonLink = $links->item( 0 );
 
-	$textLink->insertBefore($buttonLink);
+	$textLink->insertBefore( $buttonLink );
 
-    // switched output
+	// switched output
 	return $d->saveHTML();
 }
 

@@ -126,12 +126,19 @@ header {
     }
 
     .wp-block-button a {
+        padding-top: 1em;
         background-color: $color_accent;
         transition: all 0.2s ease-in-out 0s;
+
+        font-weight: 700;
     }
 
     .wp-block-button:hover a:hover {
         background-color: $color_text_dark;
+    }
+
+    .wp-block-columns.has-3-columns .wp-block-button a {
+        display: block;
     }
 }
 
@@ -279,10 +286,24 @@ header {
     }
 }
 
+#content .sheee-formation-columns {
+    .wp-block-column {
+        position: relative;
+        padding-bottom: 5rem;
+    }
+    .wp-block-button {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
 #content .sheee-formation {
-    display: block;
-    padding-top: 4em;
-    text-decoration: none;
+    a.image-link {
+        display: block;
+        padding-top: 4em;
+        text-decoration: none;
+    }
 
     h2 {
         background-color: $color_accent_transparent;
