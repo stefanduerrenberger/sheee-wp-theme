@@ -9,16 +9,19 @@ body {
 }
 
 #masthead {
-    position: fixed;
+    position: relative;
     width: 100%;
     z-index: 10;
     background-color: $color_accent_header;
     color: $color_text_light;
 
     .main-navigation {
+        position: fixed;
+        width: 100%;
+        background-color: $color_accent_header;
+
 
         .menu-container {
-
             display: flex;
             justify-content: center;
 
