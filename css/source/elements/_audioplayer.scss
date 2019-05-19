@@ -21,6 +21,8 @@
         .amazingaudioplayer-pause {
             max-width: 17%;
             float: left;
+            margin-top: 19px;
+            margin-left: 21px;
         }
 
         .amazingaudioplayer-play:hover,
@@ -166,9 +168,34 @@
 
 @include media("<=tablet") {
     #content {
+        .wonderpluginaudio:not([data-skin="blueplaystop"]) {
+            width: 100% !important;
+
+            .amazingaudioplayer-player-wrapper {
+                width: auto;
+                margin: 0 26px;
+            }
+
+            .amazingaudioplayer-play,
+            .amazingaudioplayer-pause {
+                max-width: 40%;
+                margin-left: 0;
+                margin-top: 18px;
+            }
+
+            .amazingaudioplayer-progress {
+                width: 75%;
+            }
+
+            .amazingaudioplayer-tracklist {
+                width: auto;
+            }
+        }
+
         .amazingaudioplayer-play,
         .amazingaudioplayer-pause {
             max-width: 40%;
+            margin: 0;
         }
 
         .wonderpluginaudio {

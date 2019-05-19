@@ -99,6 +99,17 @@ header {
                     visibility: hidden;
                 }
             }
+
+            li.current_page_item,
+            li.current-page-ancestor {
+                a:before {
+                    display: none;
+                }
+
+                a:hover:before {
+                    display: none;
+                }
+            }
         }
 
         #sheeeLogo {
@@ -291,6 +302,7 @@ header {
         position: relative;
         padding-bottom: 5rem;
     }
+
     .wp-block-button {
         position: absolute;
         bottom: 0;
@@ -437,6 +449,12 @@ header {
     }
 }
 
+@include media("<=desktop") {
+    #content ul.bg-pink {
+        padding: 2em 26px;
+    }
+}
+
 #content .wp-block-cover {
     margin-bottom: 3em;
 }
@@ -446,6 +464,8 @@ header {
  */
 
 #content form {
+    margin-bottom: 2rem;
+
     .mc4wp-form-fields label {
         display: none;
     }
