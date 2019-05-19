@@ -139,6 +139,7 @@ body {
 
 #content {
 
+    h1,
     h2,
     p {
         max-width: $content_width;
@@ -146,6 +147,7 @@ body {
         color: $color_text_dark;
     }
 
+    h1,
     h2 {
         margin-top: 3em;
         margin-bottom: 1em;
