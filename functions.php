@@ -41,10 +41,8 @@ if ( ! function_exists( 'sheee2_setup' ) ) {
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary Left', 'sheee2' ),
-			'menu-2' => esc_html__( 'Primary Right', 'sheee2' ),
-			'menu-3' => esc_html__( 'Footer Left', 'sheee2' ),
-			'menu-4' => esc_html__( 'Footer Right', 'sheee2' ),
+			'menu-1' => esc_html__( 'Primary', 'sheee2' ),
+			'menu-3' => esc_html__( 'Footer', 'sheee2' ),
 		) );
 
 		/*
@@ -148,9 +146,13 @@ add_action( 'widgets_init', 'sheee2_widgets_init' );
  * Enqueue scripts and styles.
  */
 function sheee2_scripts() {
-	wp_enqueue_style( 'sheee2-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.8.2/css/all.css', null, '5.8.2' );
+
+	wp_enqueue_style( 'sheee2-style', get_stylesheet_uri(), 'font-awesome' );
 
 	wp_enqueue_script( 'sheee2-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'sheee2-general', get_template_directory_uri() . '/js/sheee.js' );
 
 	wp_enqueue_script( 'sheee2-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -164,3 +166,8 @@ add_action( 'wp_enqueue_scripts', 'sheee2_scripts' );
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Custom Gutenberg Blocks
+ */
+require get_template_directory() . '/inc/gutenberg-blocks.php';

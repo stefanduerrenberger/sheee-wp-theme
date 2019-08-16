@@ -1,226 +1,212 @@
 html, body {
-	width: 100%;
-	 overflow-x: hidden;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body {
-	/*background: url(img/bg-noise.jpg) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-*/
-	background: url(img/bg-noise.jpg) repeat center center fixed; 
-    -webkit-background-size: auto;
-    -moz-background-size: auto;
-    -o-background-size: auto;
-    background-size: auto;
-
     font-family: $font_main;
     line-height: $font_line-height-body;
 }
 
 #masthead {
-	display: grid;
-    grid-gap: 0;
-	grid-template-columns: 1fr $logo_element_width 1fr;
-	grid-template-rows: 24px $navbar_height;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    background-color: $color_accent_header;
+    color: $color_text_light;
 
-	.topbar-left {
-		grid-column: 1;
-		grid-row: 1;
-		background-color: $color_accent;
-		background-image: linear-gradient(to right, $color_accent_dark, $color_accent);
-	}
-
-	.topbar-right {
-		grid-column: 3;
-		grid-row: 1;
-		background-color: $color_accent;
-		background-image: linear-gradient(to right, $color_accent, $color_accent_dark);
-	}
-
-	.toplogo {
-		grid-column: 2;
-		grid-row: 1 / 4;
-		position: relative;
-	}
-
-	.main-navigation {
-		grid-column: 1 / 4;
-		grid-row: 2;
-
-		.menu-container {
-			display: grid;
-			grid-gap: 0;
-			grid-template-columns: 1fr $logo_element_width 1fr;
-			grid-template-rows: $navbar_height;
-			transition: right 0.3s;
-
-			.menu-left {
-				grid-column: 1;
-				grid-row: 1;
-			}
-
-			.menu-right {
-				grid-column: 3;
-				grid-row: 1;
-			}
-		}
-
-		/* Menu Toggle */
-		#toggle {
-			display: none;
-			position: absolute;
-			z-index: 30;
-			right: 32px;
-			width: 28px;
-			height: 30px;
-			margin: 30px auto 10px;
-			cursor: pointer;
-		}
-
-		#toggle span:after,
-		#toggle span:before {
-			content: "";
-			position: absolute;
-			left: 0;
-			top: -9px;
-		}
-		#toggle span:after{
-			top: 9px;
-		}
-		#toggle span {
-			position: relative;
-			display: block;
-		}
-
-		#toggle span,
-		#toggle span:after,
-		#toggle span:before {
-			width: 100%;
-			height: 5px;
-			background-color: $color_accent;
-			transition: all 0.3s;
-			backface-visibility: hidden;
-			border-radius: 1px;
-		}
-
-		/* on activation */
-		#toggle.on span {
-			background-color: transparent;
-		}
-		#toggle.on span:before {
-			transform: rotate(45deg) translate(5px, 5px);
-			background-color: #fff;
-		}
-		#toggle.on span:after {
-			transform: rotate(-45deg) translate(7px, -8px);
-			background-color: #fff;
-		}
-	}
+    .main-navigation {
+        position: fixed;
+        width: 100%;
+        background-color: $color_accent_header;
 
 
+        .menu-container {
+            display: flex;
+            justify-content: center;
+
+            ul.menu {
+                margin: 0;
+                padding: 1em 0;
+            }
+        }
+
+        /* Menu Toggle */
+        #toggle {
+            display: none;
+            position: absolute;
+            z-index: 90;
+            right: 32px;
+            width: 28px;
+            height: 30px;
+            margin: 30px auto 10px;
+            cursor: pointer;
+        }
+
+        #toggle span:after,
+        #toggle span:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: -9px;
+        }
+
+        #toggle span:after {
+            top: 9px;
+        }
+
+        #toggle span {
+            position: relative;
+            display: block;
+        }
+
+        #toggle span,
+        #toggle span:after,
+        #toggle span:before {
+            width: 100%;
+            height: 5px;
+            background-color: $color_accent;
+            transition: all 0.3s;
+            backface-visibility: hidden;
+            border-radius: 1px;
+        }
+
+        /* on activation */
+        #toggle.on span {
+            background-color: transparent;
+        }
+
+        #toggle.on span:before {
+            transform: rotate(45deg) translate(5px, 5px);
+            background-color: #fff;
+        }
+
+        #toggle.on span:after {
+            transform: rotate(-45deg) translate(7px, -8px);
+            background-color: #fff;
+        }
+    }
 }
 
 @include media("<=desktop") {
-	#masthead {
-		grid-template-columns: 1fr $logo_element_width 9fr;
-		grid-template-rows: 24px $navbar_height;
+    #page {
+        position: relative;
+    }
 
-		.main-navigation {
-			.menu-container {
-				grid-column: 3;
-				grid-row: 2;
-				/*display: none;*/
-				position: absolute;
-				z-index: 20;
-				right: -200px;
-				top: 0;
-				width: 200px;
+    #masthead {
+        grid-template-columns: 1fr $logo_element_width 9fr;
+        grid-template-rows: 24px $navbar_height;
 
-				.menu-left {
-					grid-column: none;
-					grid-row: none;
-					background-color: $color_accent_dark;
-					z-index: 20;
-					margin: 0;
-					padding: 126px 20px 0 40px;
-				}
+        .main-navigation {
+            .menu-container {
+                position: absolute;
+                z-index: 80;
+                right: -200px;
+                top: 0;
+                width: 200px;
+                background-color: $color_accent;
 
-				.menu-right {
-					grid-column: none;
-					grid-row: none;
-					background-color: $color_accent_dark;
-					z-index: 20;
-					margin: 0;
-					padding: 0 20px 32px 40px;
-				}
-			}
+                ul.menu {
+                    padding-top: 4em;
 
-			#toggle {
-				display: block;
-			}
+                    li a {
+                        padding: 0;
+                    }
+                }
+            }
 
-			#toggle.on + .menu-container {
-				display: block;
-				right: 0;
-			}
-		}
+            #toggle {
+                display: block;
+            }
 
-		.main-navigation:target {
-			.menu-left {
-				display: block;
-			}
-		}
+            #toggle.on + .menu-container {
+                display: block;
+                right: 0;
+            }
+        }
 
-		
-	}
+        .main-navigation:target {
+            .menu-left {
+                display: block;
+            }
+        }
+
+
+    }
 }
 
 @import "header";
 
 #content {
+
+    h2,
+    p {
+        max-width: $content_width;
+        margin: 1em auto;
+        color: $color_text_dark;
+    }
+
+    h2 {
+        margin-top: 3em;
+        margin-bottom: 1em;
+        color: $color_accent;
+        font-weight: 400;
+        text-transform: uppercase;
+        font-size: 1.4em;
+        letter-spacing: 0.07em;
+    }
+}
+
+#content .wp-block-columns {
+    p,
+    h2 {
+        margin-left: 0;
+    }
+}
+
+@include media("<=desktop") {
+    h2,
+    p {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 
 @import "content";
 
 #colophon {
-	display: grid;
-    grid-gap: 64px;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr;
+    background-color: $color_accent;
+    min-height: 2em;
+    padding: 1em 0 0 0;
+    color: $color-text_light;
 
-	background-color: rgba(0, 0, 0, .5);
-	min-height: 4em;
-	padding-bottom: 4em;
+    .widget-area {
+        max-width: $content_width;
+        margin: 2em auto;
 
-	color: $color_text_dark;
+        p {
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: 0.07em;
+            font-size: 14px;
+        }
+    }
 
-	.footer-col1 {
-		grid-column: 1;
-		grid-row: 1;
-		width: ($content_width / 2 ) - 64;
-		justify-self: end;
-	}
-	.footer-col2 {
-		grid-column: 2;
-		grid-row: 1;
-		width: ($content_width / 2 ) - 64;
-	}
+    .footer-part2 {
+        background-color: #fff;
+        color: $color_text_dark;
+        min-height: 1em;
+        text-align: center;
+    }
 }
 
 @include media("<=desktop") {
-	#colophon {
-		grid-template-columns: 1fr;
-		padding: 0 32px;
+    #colophon {
+        .widget-area {
+            text-align: center;
+        }
 
-		.footer-col2 {
-			grid-column: 1;
-			grid-row: 2;
-		}
-
-	}
+    }
 }
 
 @import "footer";

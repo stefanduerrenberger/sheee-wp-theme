@@ -8,7 +8,9 @@ $breakpoints: (
 $navbar_height: 62px;
 $logo_element_width: ($navbar_height * 1.5) + 24;
 
-$content_width: 1400px;
+$content_width: 760px;
+$content_width_wide: 960px;
+
 
 @import "colors";
 @import "typography";

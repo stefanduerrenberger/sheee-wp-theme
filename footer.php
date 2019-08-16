@@ -11,34 +11,25 @@
 
 ?>
 
-	</div><!-- #content -->
+</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-
-		<div class="footer-col1">
-			<?php //if ( is_active_sidebar( 'footer_1' ) ) : ?>
-				<div class="widget-area" role="complementary">
-					<?php dynamic_sidebar( 'footer_1' ); ?>
-				</div><!-- #primary-sidebar -->
-			<?php //endif; ?>
-
+<footer id="colophon" class="site-footer">
+    <div class="footer-part1">
+        <div class="widget-area" role="complementary">
+			<?php dynamic_sidebar( 'footer_1' ); ?>
+        </div>
+    </div>
+    <div class="footer-part2">
+        <div class="widget-area" role="complementary">
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-3',
-				'menu_id'        => 'footer-menu-left',
+				'menu_id'        => 'social-menu',
 			) );
 			?>
-		</div>
-
-		<div class="footer-col2">
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-4',
-				'menu_id'        => 'footer-menu-right',
-			) );
-			?>
-		</div>
-	</footer><!-- #colophon -->
+        </div>
+    </div>
+</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

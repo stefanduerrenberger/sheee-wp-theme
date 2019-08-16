@@ -1,0 +1,543 @@
+
+#content {
+    .wonderpluginaudio:not([data-skin="blueplaystop"]) {
+        width: 80% !important;
+        max-width: $content_width_wide;
+        margin: 0 auto;
+        padding: 4em 0;
+        min-height: 250px;
+
+        background: url(img/bg-audience.jpg) no-repeat center center;
+        -webkit-background-size: cover;
+        background-size: cover;
+
+        .amazingaudioplayer-title,
+        .amazingaudioplayer-info,
+        .amazingaudioplayer-time {
+            display: none;
+        }
+
+        .amazingaudioplayer-play,
+        .amazingaudioplayer-pause {
+            max-width: 17%;
+            float: left;
+        }
+
+        .amazingaudioplayer-play:hover,
+        .amazingaudioplayer-pause:hover {
+            background-position-y: top !important; /* remove hover effect */
+        }
+
+        .amazingaudioplayer-player-wrapper,
+        .amazingaudioplayer-tracklist {
+            max-width: $content_width;
+            margin: 0 auto;
+        }
+
+        .amazingaudioplayer-progress {
+            position: relative;
+            width: 83%;
+            float: right;
+            height: 6px !important;
+            margin-top: 41px;
+            background-color: $color_accent_dark;
+            overflow: visible !important;
+        }
+
+        .amazingaudioplayer-progress-loaded {
+            background-color: $color_accent_dark;
+        }
+
+        .amazingaudioplayer-progress-played {
+            background-color: $color_accent;
+        }
+
+        .amazingaudioplayer-progress-played::after {
+            content: '';
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            float: right;
+            position: relative;
+            top: -5px;
+            -moz-border-radius: 7.5px;
+            -webkit-border-radius: 7.5px;
+            border-radius: 7.5px;
+            background-color: $color_accent;
+        }
+
+        .amazingaudioplayer-player-wrapper {
+            position: relative;
+            top: 2em;
+            width: 60%;
+        }
+
+        .amazingaudioplayer-tracks-wrapper {
+            width: 100%;
+        }
+
+        .amazingaudioplayer-tracklist {
+            width: 60%;
+            min-height: 120px;
+            background-color: rgba(255, 255, 255, .5);
+            padding: 7em 4em 1em 4em;
+            text-align: center;
+
+            ul {
+                list-style-type: none;
+                cursor: pointer;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    margin: 0;
+                    font-weight: 700;
+
+                    span {
+                        padding-left: .5em;
+                        font-weight: 700;
+                        color: $color_accent;
+                        letter-spacing: 0.07em;
+                    }
+                }
+
+                li.amazingaudioplayer-track-item-active {
+                    color: $color_accent;
+                }
+
+                li.amazingaudioplayer-track-item-active:not(.amazingaudioplayer-track-item-hoverover) div::before {
+                    content: "\203A";
+                    display: inline-block;
+                    font-weight: 700;
+                    padding-right: .5em;
+                }
+
+                li.amazingaudioplayer-track-item-hover div::before {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .wonderpluginaudio[data-skin="blueplaystop"] {
+        .amazingaudioplayer-play:hover,
+        .amazingaudioplayer-pause:hover {
+            background-position-y: top !important; /* remove hover effect */
+        }
+
+        .amazingaudioplayer-pause {
+            width: 90px !important;
+        }
+
+        .amazingaudioplayer-time {
+            display: none;
+            width: 3em;
+            height: 1.5em;
+            padding-left: 2em;
+            margin-top: -1em;
+            font-weight: 700;
+            overflow: hidden;
+            color: $color_accent;
+        }
+    }
+}
+
+.page-id-207 #content {
+    .wonderpluginaudio:not([data-skin="blueplaystop"]) {
+        background: url(img/bg_wedding_symbol.jpg) no-repeat center center;
+        background-size: cover;
+    }
+}
+
+@include media("<=desktop") {
+    #content {
+        .amazingaudioplayer-play,
+        .amazingaudioplayer-pause {
+            max-width: 25%;
+        }
+
+        .wonderpluginaudio {
+            .amazingaudioplayer-progress {
+                width: 75%;
+            }
+        }
+    }
+}
+
+@include media("<=tablet") {
+    #content {
+        .amazingaudioplayer-play,
+        .amazingaudioplayer-pause {
+            max-width: 40%;
+        }
+
+        .wonderpluginaudio {
+            .amazingaudioplayer-progress {
+                width: 60%;
+            }
+        }
+    }
+
+    .amazingaudioplayer-tracklist {
+        padding-top: 8em;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Original Styles:
+--------------------------------------------------------------*/
+
+/*
+#amazingaudioplayer-AUDIOPLAYERID {
+    box-sizing: content-box;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID div {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-image {
+    display: block;
+    position: relative;
+    float: left;
+    margin: 4px;
+    overflow: hidden;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-image img {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-image-clear {
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-text {
+    display: block;
+    position: relative;
+    text-align: left;
+    overflow: hidden;
+    padding: 8px;
+    height: auto;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-text-clear {
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-title {
+    display: block;
+    color: #333;
+    font-family: "Open Sans",Arial,sans-serif;
+    font-size: 14px;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-title-clear {
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-info {
+    display: block;
+    color: #666;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 12px;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-info-clear {
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-bar {
+    position: relative;
+    width: auto;
+    float: left;
+    padding: 8px;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-bar-buttons-clear {
+    clear: both;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-bar-clear {
+    clear: both;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-bar-title {
+    position: relative;
+    float: left;
+    color: #eee;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    line-height: 24px;
+    margin: 0 8px;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-playpause {
+    position: relative;
+    float: left;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-play {
+    position: relative;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-pause {
+    position: relative;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-stop {
+    position: relative;
+    float: left;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-prev {
+    position: relative;
+    float: left;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-next {
+    position: relative;
+    float: left;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-loop {
+    position: relative;
+    float: left;
+    margin: 0 2px;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-progress {
+    position: relative;
+    background-color: #444;
+    margin: 8px 4px;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-progress-loaded {
+    background-color: #666;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-progress-played {
+    background-color: #fcc500;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-time {
+    position: relative;
+    float: right;
+    color: #fff;
+    font: bold 12px "Open Sans", sans-serif;
+    margin: 8px;
+    color: #333;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-volume {
+    position: relative;
+    float: left;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-volume-bar {
+    background-color: #444;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-volume-bar-adjust {
+    background-color: #333;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-volume-bar-adjust-active {
+    background-color: #fcc500;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-tracklist {
+    display: block;
+    position: relative;
+    background-color: #fff;
+    padding: 4px;
+    margin-top: 8px;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-tracklist-container {
+    display: block;
+    position: relative;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-tracks-wrapper {
+    position: relative;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-tracks {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-track-item {
+    line-height: 16px;
+    list-style-type: none;
+    position: relative;
+    cursor: pointer;
+    color: #333;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 8px 4px;
+    text-align: left;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-track-item-active {
+    cursor: pointer;
+    color: #333;
+    background-color: #f0f0f0;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-track-item a {
+    color: #333;
+    text-decoration: none;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-track-item-active a {
+    color: #333;
+    text-decoration: none;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-track-item-duration {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-tracklist-arrow-prev {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    margin-left: -64px;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-tracklist-arrow-next {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    margin-left: 16px;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-tracklist-clear {
+    clear: both;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-item-id {
+    float: left;
+    width: 18px;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-item-info {
+    float: right;
+    width: 36px;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-item-title {
+    overflow: hidden;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-track-item:before,
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-track-item:after {
+    display: none;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID ul,
+#amazingaudioplayer-AUDIOPLAYERID li {
+    list-style-type: none;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-player-wrapper {
+    display: block;
+    position: relative;
+    background-color: #fff;
+    padding: 4px;
+}
+
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-playedlist-wrapper {
+    display: block;
+    position: relative;
+    background-color: #fff;
+    padding: 0;
+    margin-top: 8px;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-playedlist {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 4px;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-playedlist-title {
+    font:14px "Open Sans",Arial,sans-serif;
+    margin: 0;
+    padding: 8px;
+    color: #333;
+    text-align: left;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-playedlist-item {
+    list-style-type: none;
+    position: relative;
+    color: #333;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 8px 4px;
+    text-align: left;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-playedlist-item:hover{
+    color: #333;
+    background-color: #f0f0f0;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-playedlist-item-shoutcast-time {
+    font-size: 13px;
+    width: 90px;
+    display: block;
+    float:left;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-playedlist-item-shoutcast-title {
+    display:block;
+    font-size:13px;
+    margin-left:90px;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-playedlist-item-radionomy-image {
+    width: 60px;
+    display: block;
+    float:left;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-playedlist-item-radionomy-text {
+    display:block;
+    float:left;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-playedlist-item-radionomy-title {
+    font-size: 13px;
+    margin: 4px;
+    padding: 0;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-playedlist-item-radionomy-artist {
+    font-size: 12px;
+    margin: 4px;
+    padding: 0;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-tracklistsearch {
+    box-sizing: border-box;
+    padding: 8px 0 0 0;
+}
+
+#amazingaudioplayer-AUDIOPLAYERID .amazingaudioplayer-tracklistsearch-input {
+    box-sizing: border-box;
+    width: 100%;
+}
+*/
