@@ -1,14 +1,38 @@
 $color_background-screen: #fff;
 
-/*$color_accent: #d21686;*/
 $color_accent: rgb(255, 51, 153);
 $color_accent_transparent: rgba(255, 51, 153, .7);
-/*$color_accent_header: rgba(210, 22, 134, .9);*/
 $color_accent_header: rgba(255, 51, 153, 0.9);
 $color_accent_dark: #821F52; /* #821F52 */
 
 $color_text_dark: rgb(83, 6, 42); /* #53062a */
 $color_text_light: rgb(255, 255, 255); /* #ffffff */
 
+/* Color Scheme: sarahhuber */
+$color_accent_sarahhuber: rgb(22, 189, 181);;
+$color_accent_transparent_sarahhuber: rgba(22, 182, 174, .7);
+$color_accent_header_sarahhuber: rgba(22, 182, 174, 0.9);
+$color_accent_dark_sarahhuber: rgb(22, 141, 136);
 
+$color_text_dark_sarahhuber: rgba(4, 46, 43, 0.88); /* #53062a */
+$color_text_light_sarahhuber: rgb(255, 255, 255); /* #ffffff */
 
+/* Variable list for loops */
+$selector_colorscheme_sarahhuber: ".color-scheme-sarahhuber";
+$schema_names: sarahhuber;
+$selectors: $selector_colorscheme_sarahhuber;
+$colors_accent: $color_accent_sarahhuber;
+$colors_accent_transparent: $color_accent_transparent_sarahhuber;
+$colors_accent_header: $color_accent_header_sarahhuber;
+$colors_accent_dark: $color_accent_dark_sarahhuber;
+
+$colors_text_dark: $color_text_dark_sarahhuber;
+$colors_text_light: $color_text_light_sarahhuber;
+
+/* Dummy code to output all color schemes in a loop */
+/* Color Schemes */
+@for $i from 1 through length($schema_names) {
+    #{nth($selectors, $i)} {
+        /* background-color: #{nth($colors_accent, $i)} */
+    }
+}

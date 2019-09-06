@@ -57,36 +57,57 @@ if ( ! function_exists( 'sheee2_setup' ) ) {
 			'caption',
 		) );
 
-/*
-		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'sheee2_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
-*/
-
-		add_theme_support( 'editor-color-palette', array(
-		    array(
-		        'name' => __( 'Sheee Accent Pink', 'sheee2' ),
-		        'slug' => 'sheee-accent-pink',
-		        'color' => '#ba2d74',
-		    ),
-		    array(
-		        'name' => __( 'Shee Dark Pink', 'sheee2' ),
-		        'slug' => 'sheee-dark-pink',
-		        'color' => '#821F52',
-		    ),
-		    array(
-		        'name' => __( 'Shee Light Gray', 'sheee2' ),
-		        'slug' => 'sheee-light-gray',
-		        'color' => '#dcdcdc',
-		    ),
-		    array(
-		        'name' => __( 'Shee Dark Gray', 'sheee2' ),
-		        'slug' => 'sheee-dark-gray',
-		        'color' => '#333333',
-		    ),
-		) );
+		/**
+		 * Color palettes for editor blocks
+		 */
+		$themeOptions = get_option( 'sheee_theme_options' );
+		if ( $themeOptions['color_scheme'] == 'sarahhuber' ) {
+			add_theme_support( 'editor-color-palette', array(
+				array(
+					'name'  => __( 'Sheee Accent Pink', 'sheee2' ),
+					'slug'  => 'sheee-accent-pink',
+					'color' => '#16BDB5',
+				),
+				array(
+					'name'  => __( 'Shee Dark Pink', 'sheee2' ),
+					'slug'  => 'sheee-dark-pink',
+					'color' => '#168D88',
+				),
+				array(
+					'name'  => __( 'Shee Light Gray', 'sheee2' ),
+					'slug'  => 'sheee-light-gray',
+					'color' => '#dcdcdc',
+				),
+				array(
+					'name'  => __( 'Shee Dark Gray', 'sheee2' ),
+					'slug'  => 'sheee-dark-gray',
+					'color' => '#333333',
+				),
+			) );
+		} else {
+			add_theme_support( 'editor-color-palette', array(
+				array(
+					'name'  => __( 'Sheee Accent Pink', 'sheee2' ),
+					'slug'  => 'sheee-accent-pink',
+					'color' => '#ba2d74',
+				),
+				array(
+					'name'  => __( 'Shee Dark Pink', 'sheee2' ),
+					'slug'  => 'sheee-dark-pink',
+					'color' => '#821F52',
+				),
+				array(
+					'name'  => __( 'Shee Light Gray', 'sheee2' ),
+					'slug'  => 'sheee-light-gray',
+					'color' => '#dcdcdc',
+				),
+				array(
+					'name'  => __( 'Shee Dark Gray', 'sheee2' ),
+					'slug'  => 'sheee-dark-gray',
+					'color' => '#333333',
+				),
+			) );
+		}
 
 
 		// Add theme support for selective refresh for widgets.
@@ -120,6 +141,7 @@ function sheee2_content_width() {
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 	$GLOBALS['content_width'] = apply_filters( 'sheee2_content_width', 960 );
 }
+
 add_action( 'after_setup_theme', 'sheee2_content_width', 0 );
 
 /**
@@ -139,6 +161,7 @@ function sheee2_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 }
+
 add_action( 'widgets_init', 'sheee2_widgets_init' );
 
 
@@ -160,6 +183,7 @@ function sheee2_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'sheee2_scripts' );
 
 /**
@@ -171,3 +195,8 @@ require get_template_directory() . '/inc/template-functions.php';
  * Custom Gutenberg Blocks
  */
 require get_template_directory() . '/inc/gutenberg-blocks.php';
+
+/**
+ * Theme Options
+ */
+require get_template_directory() . '/inc/theme-options.php';

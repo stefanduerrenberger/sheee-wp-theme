@@ -1,0 +1,75 @@
+/*!
+ * Color Palettes
+ */
+#content {
+    .has-sheee-accent-pink-color {
+        color: $color_accent;
+    }
+
+    .has-sheee-accent-pink-background-color {
+        background-color: $color_accent;
+    }
+
+    .has-sheee-dark-pink-color {
+        color: $color_accent_dark;
+    }
+
+    .has-sheee-dark-pink-background-color {
+        background-color: $color_accent_dark;
+    }
+
+    .has-sheee-light-gray-color {
+        color: $color_text_light;
+    }
+
+    .has-sheee-light-gray-background-color {
+        background-color: $color_text_dark;
+    }
+
+    .has-sheee-dark-gray-color {
+        color: $color_text_light;
+    }
+
+    .has-sheee-dark-gray-background-color {
+        background-color: $color_text_light;
+    }
+}
+
+/* Color Schemes */
+@for $i from 1 through length($schema_names) {
+    #{nth($selectors, $i)} {
+        #content {
+            .has-sheee-accent-pink-color {
+                color: #{nth($colors_accent, $i)};
+            }
+
+            .has-sheee-accent-pink-background-color {
+                background-color: #{nth($colors_accent, $i)};
+            }
+
+            .has-sheee-dark-pink-color {
+                color: #{nth($colors_accent_dark, $i)};
+            }
+
+            .has-sheee-dark-pink-background-color {
+                background-color: #{nth($colors_accent_dark, $i)};
+            }
+
+            .has-sheee-light-gray-color {
+                color: #{nth($colors_text_light, $i)};
+            }
+
+            .has-sheee-light-gray-background-color {
+                background-color: #{nth($colors_text_dark, $i)};
+            }
+
+            .has-sheee-dark-gray-color {
+                color: #{nth($colors_text_light, $i)};
+            }
+
+            .has-sheee-dark-gray-background-color {
+                background-color: #{nth($colors_text_light, $i)};
+            }
+        }
+    }
+}
