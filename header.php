@@ -1,5 +1,5 @@
 <?php
-
+$themeOptions = get_option( 'sheee_theme_options' );
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -31,7 +31,11 @@
 				?>
             </div>
         </nav><!-- #site-navigation -->
-        <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Sheee-Logo-pink.png" alt="Sheee Logo" id="sheeeLogo"></a>
+        <?php if ($themeOptions['color_scheme'] == 'sarahhuber'): ?>
+            <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/sarahhuber/logo-sarah-huber.png" alt="Logo Sarah Huber" id="sarahhuberLogo"></a>
+        <?php else: ?>
+            <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Sheee-Logo-pink.png" alt="Sheee Logo" id="sheeeLogo"></a>
+        <?php endif; ?>
     </header><!-- #masthead -->
 
     <div id="content" class="site-content">

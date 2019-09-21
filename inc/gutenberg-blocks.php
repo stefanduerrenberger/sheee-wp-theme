@@ -7,6 +7,25 @@ if ( function_exists( 'acf_add_local_field_group' ) ) {
 		'title'                 => 'Sheee Formation Block',
 		'fields'                => array(
 			array(
+				'key'               => 'field_5cc975cd224a4',
+				'label'             => 'Small Title',
+				'name'              => 'small_title',
+				'type'              => 'text',
+				'instructions'      => '',
+				'required'          => 0,
+				'conditional_logic' => 0,
+				'wrapper'           => array(
+					'width' => '',
+					'class' => '',
+					'id'    => '',
+				),
+				'default_value'     => '',
+				'placeholder'       => '',
+				'prepend'           => '',
+				'append'            => '',
+				'maxlength'         => '',
+			),
+			array(
 				'key'               => 'field_5cc975cd444a4',
 				'label'             => 'Formation',
 				'name'              => 'formation',
@@ -142,14 +161,22 @@ function sheee_block_formation_render() {
     <div class="sheee-formation">
         <a class="image-link" style="background-image: url(<?php echo $image[0] ?>);"
            href="<?php echo $fields['link'] ?>">
-            <h2><span class="sup">Sheee</span><br><?php echo $fields['formation'] ?></h2>
+            <h2>
+                <?php if (!empty($fields['small_title'])): ?>
+                    <span class="sup"><?php echo $fields['small_title'] ?></span><br>
+                <?php endif; ?>
+
+                <?php echo $fields['formation'] ?>
+            </h2>
         </a>
 		<?php echo $fields['text'] ?>
     </div>
-    <div class="wp-block-button is-style-squared">
-        <a class="wp-block-button__link" href="<?php echo $fields['cta_button']['url'] ?>"
-           target="<?php echo $fields['cta_button']['target'] ?>"><?php echo $fields['cta_button']['title'] ?></a>
-    </div>
+    <?php if (!empty($fields['cta_button']['title']) && !empty($fields['cta_button']['target'])): ?>
+        <div class="wp-block-button is-style-squared">
+            <a class="wp-block-button__link" href="<?php echo $fields['cta_button']['url'] ?>"
+               target="<?php echo $fields['cta_button']['target'] ?>"><?php echo $fields['cta_button']['title'] ?></a>
+        </div>
+    <?php endif; ?>
 	<?php
 }
 

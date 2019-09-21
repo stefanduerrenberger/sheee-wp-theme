@@ -140,6 +140,7 @@ body {
 #content {
     h1,
     h2,
+    h3,
     p {
         max-width: $content_width;
         margin: 1em auto;
@@ -155,6 +156,14 @@ body {
         text-transform: uppercase;
         font-size: 1.4em;
         letter-spacing: 0.07em;
+    }
+
+    h3 {
+        margin-top: 2em;
+        margin-bottom: 1em;
+        color: $color_accent;
+        font-weight: 600;
+        font-size: 1.2em;
     }
 }
 
@@ -250,6 +259,10 @@ body {
 
             h1,
             h2 {
+                color: #{nth($colors_accent, $i)};
+            }
+
+            h3 {
                 color: #{nth($colors_accent, $i)};
             }
         }

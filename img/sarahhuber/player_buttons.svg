@@ -16,7 +16,10 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="player_buttons.svg">
+   sodipodi:docname="player_buttons.svg"
+   inkscape:export-filename="/home/sd/www/sheee/wp-content/themes/sheee-wp-theme/img/sarahhuber/player_buttons.png"
+   inkscape:export-xdpi="72"
+   inkscape:export-ydpi="72">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -26,11 +29,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="5.9874661"
-     inkscape:cy="50.330774"
+     inkscape:zoom="5.6"
+     inkscape:cx="72.089394"
+     inkscape:cy="102.0427"
      inkscape:document-units="mm"
-     inkscape:current-layer="g907-3"
+     inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
      showguides="true"
@@ -127,7 +130,9 @@
        inkscape:randomized="0"
        d="m 33.338053,47.664103 0,-12.280728 10.635422,6.140364 z"
        inkscape:transform-center-x="-1.1215679"
-       transform="matrix(0.63273572,0,0,1.0974133,-11.853377,215.80702)" />
+       transform="matrix(0.63273572,0,0,1.0974133,-11.853377,215.80702)"
+       inkscape:export-xdpi="96.119087"
+       inkscape:export-ydpi="96.119087" />
     <path
        sodipodi:type="star"
        style="opacity:1;fill:#16bdb5;fill-opacity:1;stroke:none;stroke-width:0.52916664;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -164,7 +169,9 @@
     </g>
     <g
        transform="translate(52.678336,-15.064637)"
-       id="g907-3">
+       id="g907-3"
+       inkscape:export-xdpi="96.119087"
+       inkscape:export-ydpi="96.119087">
       <rect
          y="269.70184"
          x="-19.953733"
