@@ -151,6 +151,13 @@
     }
 }
 
+.color-scheme-sarahhuber #content .post-1047 {
+    .wonderpluginaudio:not([data-skin="blueplaystop"]) {
+        background: url("/wp-content/themes/sheee2/img/sarahhuber/player-bg-trauerfeier.jpg") no-repeat center center;
+        background-size: cover;
+    }
+}
+
 @include media("<=desktop") {
     #content {
         .amazingaudioplayer-play,
