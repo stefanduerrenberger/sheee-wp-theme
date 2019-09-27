@@ -171,7 +171,8 @@ function sheee_block_formation_render() {
         </a>
 		<?php echo $fields['text'] ?>
     </div>
-    <?php if (!empty($fields['cta_button']['title']) && !empty($fields['cta_button']['target'])): ?>
+
+    <?php if (!empty($fields['cta_button']['title']) && !empty($fields['cta_button']['url'])): ?>
         <div class="wp-block-button is-style-squared">
             <a class="wp-block-button__link" href="<?php echo $fields['cta_button']['url'] ?>"
                target="<?php echo $fields['cta_button']['target'] ?>"><?php echo $fields['cta_button']['title'] ?></a>

@@ -32,7 +32,7 @@ header {
                 position: absolute;
                 width: 100%;
                 height: 1px;
-                bottom: 0.7em;
+                bottom: 0.4em;
                 left: 0;
                 background-color: $color_background-screen;
                 visibility: hidden;
@@ -608,6 +608,10 @@ header {
             text-decoration: none;
             text-transform: uppercase;
             font-weight: 600;
+        }
+
+        a:hover {
+            color: #fff;
         }
     }
 }

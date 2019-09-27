@@ -16,6 +16,9 @@ $themeOptions = get_option( 'sheee_theme_options' );
 </head>
 
 <body <?php body_class(); ?>>
+<?php // Tag manager tag from plugin Google Tag Manager for WordPress */ ?>
+<?php if ( function_exists( 'gtm4wp_the_gtm_tag' ) ) { gtm4wp_the_gtm_tag(); } ?>
+
 <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'sheee2' ); ?></a>
 
