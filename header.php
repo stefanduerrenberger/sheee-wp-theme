@@ -35,9 +35,9 @@ $themeOptions = get_option( 'sheee_theme_options' );
             </div>
         </nav><!-- #site-navigation -->
         <?php if ($themeOptions['color_scheme'] == 'sarahhuber'): ?>
-            <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/sarahhuber/logo-sarah-huber.png" alt="Logo Sarah Huber" id="sarahhuberLogo"></a>
+            <a href="/" class="logolink"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/sarahhuber/logo-sarah-huber.png" alt="Logo Sarah Huber" id="sarahhuberLogo"></a>
         <?php else: ?>
-            <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Sheee-Logo-pink.png" alt="Sheee Logo" id="sheeeLogo"></a>
+            <a href="/" class="logolink"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Sheee-Logo-pink.png" alt="Sheee Logo" id="sheeeLogo"></a>
         <?php endif; ?>
     </header><!-- #masthead -->
 
