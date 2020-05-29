@@ -237,11 +237,6 @@ body {
                 #toggle span:before {
                     background-color: #{nth($colors_accent, $i)};
                 }
-
-                #toggle.on span:after,
-                #toggle.on span:before {
-                    background-color: #fff;
-                }
             }
         }
 
