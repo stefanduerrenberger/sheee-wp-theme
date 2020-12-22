@@ -141,7 +141,8 @@ body {
     h1,
     h2,
     h3,
-    p {
+    p,
+    .asp_product_item {
         max-width: $content_width;
         margin: 1em auto;
         color: $color_text_dark;
