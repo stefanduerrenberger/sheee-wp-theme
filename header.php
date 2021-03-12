@@ -1,5 +1,5 @@
 <?php
-
+$themeOptions = get_option( 'sheee_theme_options' );
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -16,6 +16,9 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php // Tag manager tag from plugin Google Tag Manager for WordPress */ ?>
+<?php if ( function_exists( 'gtm4wp_the_gtm_tag' ) ) { gtm4wp_the_gtm_tag(); } ?>
+
 <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'sheee2' ); ?></a>
 
@@ -31,7 +34,13 @@
 				?>
             </div>
         </nav><!-- #site-navigation -->
-        <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Sheee-Logo-pink.png" alt="Sheee Logo" id="sheeeLogo"></a>
+        <?php if ($themeOptions['color_scheme'] == 'sarahhuber'): ?>
+            <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/sarahhuber/logo-sarah-huber.png" alt="Logo Sarah Huber" id="sarahhuberLogo"></a>
+        <?php elseif ($themeOptions['color_scheme'] == 'musikteamevents'): ?>
+            <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/musikteamevents/logo-musikteamevents.png" alt="Logo Musikteamevents" id="musikteameventslogo"></a>
+        <?php else: ?>
+            <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Sheee-Logo-pink.png" alt="Sheee Logo" id="sheeeLogo"></a>
+        <?php endif; ?>
     </header><!-- #masthead -->
 
     <div id="content" class="site-content">

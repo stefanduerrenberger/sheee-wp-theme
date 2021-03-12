@@ -1,14 +1,72 @@
 $color_background-screen: #fff;
 
-/*$color_accent: #d21686;*/
 $color_accent: rgb(255, 51, 153);
 $color_accent_transparent: rgba(255, 51, 153, .7);
-/*$color_accent_header: rgba(210, 22, 134, .9);*/
 $color_accent_header: rgba(255, 51, 153, 0.9);
 $color_accent_dark: #821F52; /* #821F52 */
 
 $color_text_dark: rgb(83, 6, 42); /* #53062a */
 $color_text_light: rgb(255, 255, 255); /* #ffffff */
 
+/* Color Scheme: sarahhuber */
+/*
+$color_accent_sarahhuber: rgb(22, 189, 181);;
+$color_accent_transparent_sarahhuber: rgba(22, 182, 174, .7);
+$color_accent_header_sarahhuber: rgba(22, 182, 174, 0.9);
+$color_accent_dark_sarahhuber: rgb(22, 141, 136);
+*/
+
+/* V3 */
+/*
+$color_accent_sarahhuber: rgb(86, 164, 199);
+$color_accent_transparent_sarahhuber: rgba(90, 169, 205, .7);
+$color_accent_header_sarahhuber: rgba(90, 169, 205, 0.9);
+$color_accent_dark_sarahhuber: rgb(58, 96, 116);
+*/
 
 
+/* V1 */
+$color_accent_sarahhuber: rgb(39, 136, 186);
+$color_accent_transparent_sarahhuber: rgba(39, 136, 186, .7);
+$color_accent_header_sarahhuber: rgba(39, 136, 186, 0.9);
+$color_accent_dark_sarahhuber: rgb(26, 82, 114);
+
+$color_text_dark_sarahhuber: rgba(19, 65, 86, 0.88); /*  */
+$color_text_light_sarahhuber: rgb(255, 255, 255); /* #ffffff */
+
+$color_accent_musikteamevents: rgba(227, 70, 22, 0.9);
+$color_accent_transparent_musikteamevents: rgba(231, 60, 42, 0.65);
+$color_accent_header_musikteamevents: rgba(227, 70, 22, 0.9);
+$color_accent_dark_musikteamevents: rgba(180, 21, 10, 0.9);
+
+/*
+$color_accent_musikteamevents: rgba(128, 32, 238, 0.9);
+$color_accent_transparent_musikteamevents: rgba(128, 32, 238, 0.7);
+$color_accent_header_musikteamevents: rgba(128, 32, 238, 0.9);
+$color_accent_dark_musikteamevents: rgba(93, 8, 189, 0.9);
+*/
+$color-test: #E34616;
+
+$color_text_dark_musikteamevents: rgba(47, 9, 17, 0.95); /*  */
+$color_text_light_musikteamevents: rgb(255, 255, 255); /* #ffffff */
+
+/* Variable list for loops */
+$selector_colorscheme_sarahhuber: ".color-scheme-sarahhuber";
+$selector_colorscheme_musikteamevents: ".color-scheme-musikteamevents";
+$schema_names: sarahhuber, musikteamevents;
+$selectors: $selector_colorscheme_sarahhuber, $selector_colorscheme_musikteamevents;
+$colors_accent: $color_accent_sarahhuber, $color_accent_musikteamevents;
+$colors_accent_transparent: $color_accent_transparent_sarahhuber, $color_accent_transparent_musikteamevents;
+$colors_accent_header: $color_accent_header_sarahhuber, $color_accent_header_musikteamevents;
+$colors_accent_dark: $color_accent_dark_sarahhuber, $color_accent_dark_musikteamevents;
+
+$colors_text_dark: $color_text_dark_sarahhuber, $color_text_dark_musikteamevents;
+$colors_text_light: $color_text_light_sarahhuber, $color_text_light_musikteamevents;
+
+/* Dummy code to output all color schemes in a loop */
+/* Color Schemes */
+@for $i from 1 through length($schema_names) {
+    #{nth($selectors, $i)} {
+        /* background-color: #{nth($colors_accent, $i)} */
+    }
+}

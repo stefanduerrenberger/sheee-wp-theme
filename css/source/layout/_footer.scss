@@ -5,3 +5,17 @@
 #social-menu a:hover {
     color: $color_accent_dark;
 }
+
+/* Color Schemes */
+@for $i from 1 through length($schema_names) {
+    #{nth($selectors, $i)} {
+        /* background-color: #{nth($colors_accent, $i)} */
+        #social-menu a {
+            color: #{nth($colors_accent, $i)};
+        }
+
+        #social-menu a:hover {
+            color: #{nth($colors_accent_dark, $i)};
+        }
+    }
+}

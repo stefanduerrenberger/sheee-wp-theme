@@ -138,14 +138,16 @@ body {
 @import "header";
 
 #content {
-
+    h1,
     h2,
+    h3,
     p {
         max-width: $content_width;
         margin: 1em auto;
         color: $color_text_dark;
     }
 
+    h1,
     h2 {
         margin-top: 3em;
         margin-bottom: 1em;
@@ -154,6 +156,14 @@ body {
         text-transform: uppercase;
         font-size: 1.4em;
         letter-spacing: 0.07em;
+    }
+
+    h3 {
+        margin-top: 2em;
+        margin-bottom: 1em;
+        color: $color_accent;
+        font-weight: 600;
+        font-size: 1.2em;
     }
 }
 
@@ -210,3 +220,66 @@ body {
 }
 
 @import "footer";
+
+/* Color Schemes */
+@for $i from 1 through length($schema_names) {
+    #{nth($selectors, $i)} {
+
+        #masthead {
+            background-color: #{nth($colors_accent_header, $i)};
+            color: #{nth($colors_text_light, $i)};
+
+            .main-navigation {
+                background-color: #{nth($colors_accent_header, $i)};
+
+                #toggle span,
+                #toggle span:after,
+                #toggle span:before {
+                    background-color: #{nth($colors_accent, $i)};
+                }
+
+                #toggle.on span:after,
+                #toggle.on span:before {
+                    background-color: #fff;
+                }
+            }
+        }
+
+        @include media("<=desktop") {
+            #masthead {
+                .main-navigation {
+                    .menu-container {
+                        background-color: #{nth($colors_accent, $i)};
+                    }
+                }
+            }
+        }
+
+        #content {
+            h1,
+            h2,
+            p {
+                color: #{nth($colors_text_dark, $i)};
+            }
+
+            h1,
+            h2 {
+                color: #{nth($colors_accent, $i)};
+            }
+
+            h3 {
+                color: #{nth($colors_accent, $i)};
+            }
+        }
+
+        #colophon {
+            background-color: #{nth($colors_accent, $i)};
+
+            .footer-part2 {
+                background-color: #fff;
+                color: #{nth($colors_text_dark, $i)};
+            }
+        }
+
+    }
+}

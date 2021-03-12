@@ -32,7 +32,7 @@ header {
                 position: absolute;
                 width: 100%;
                 height: 1px;
-                bottom: 0.7em;
+                bottom: 0.4em;
                 left: 0;
                 background-color: $color_background-screen;
                 visibility: hidden;
@@ -72,6 +72,22 @@ header {
         top: 40px;
         left: 20px;
     }
+
+    #sarahhuberLogo {
+        position: absolute;
+        max-width: 380px;
+        z-index: 50;
+        top: 80px;
+        left: 20px;
+    }
+
+    #musikteameventslogo {
+        position: absolute;
+        max-width: 160px;
+        z-index: 50;
+        top: 75px;
+        left: 20px;
+    }
 }
 
 @include media("<=desktop") {
@@ -104,6 +120,12 @@ header {
         #sheeeLogo {
             max-width: 120px;
             top: 10px;
+            left: 10px;
+        }
+
+        #sarahhuberLogo {
+            max-width: 160px;
+            top: 20px;
             left: 10px;
         }
     }
@@ -215,43 +237,6 @@ header {
 }
 
 /*!
- * Color Pallettes
- */
-#content {
-    .has-sheee-accent-pink-color {
-        color: $color_accent;
-    }
-
-    .has-sheee-accent-pink-background-color {
-        background-color: $color_accent;
-    }
-
-    .has-sheee-dark-pink-color {
-        color: $color_accent_dark;
-    }
-
-    .has-sheee-dark-pink-background-color {
-        background-color: $color_accent_dark;
-    }
-
-    .has-sheee-light-gray-color {
-        color: $color_text_light;
-    }
-
-    .has-sheee-light-gray-background-color {
-        background-color: $color_text_dark;
-    }
-
-    .has-sheee-dark-gray-color {
-        color: $color_text_light;
-    }
-
-    .has-sheee-dark-gray-background-color {
-        background-color: $color_text_light;
-    }
-}
-
-/*!
  * Gutenberg elements
  */
 
@@ -291,6 +276,7 @@ header {
         position: relative;
         padding-bottom: 5rem;
     }
+
     .wp-block-button {
         position: absolute;
         bottom: 0;
@@ -444,7 +430,6 @@ header {
 /*!
  * Forms
  */
-
 #content form {
     .mc4wp-form-fields label {
         display: none;
@@ -485,7 +470,6 @@ header {
 /*!
  * Easy Testimonial
  */
-
 #content .easy-t-slideshow-wrap {
     max-width: ($content_width) + 100;
     margin: 2em auto;
@@ -632,6 +616,212 @@ header {
             text-decoration: none;
             text-transform: uppercase;
             font-weight: 600;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+    }
+}
+
+
+/* Color Schemes */
+@for $i from 1 through length($schema_names) {
+    #{nth($selectors, $i)} {
+        /*!
+         * Menu
+         */
+        header {
+            ul.menu {
+                li {
+                    a {
+                        color: #{nth($colors_text_light, $i)};
+                    }
+
+                    a:before {
+                        background-color: $color_background-screen;
+                    }
+                }
+            }
+        }
+
+        @include media("<=desktop") {
+            header {
+                .menu {
+                    li {
+                        a:hover {
+                            background-color: #{nth($colors_accent, $i)};
+                        }
+                    }
+                }
+            }
+        }
+
+        /** Button */
+        #content {
+            .wp-block-button a {
+                background-color: #{nth($colors_accent, $i)};
+            }
+
+            .wp-block-button:hover a:hover {
+                background-color: #{nth($colors_text_dark, $i)};
+            }
+        }
+
+        .easy-t-cycle-pager span.cycle-pager-active {
+            color: #{nth($colors_accent, $i)};
+        }
+
+        /* Carousel slider */
+        #content .carousel-slider-outer {
+            .carousel-slider__caption {
+                .title {
+                    color: #{nth($colors_text_dark, $i)};
+                }
+
+                .caption {
+                    color: #{nth($colors_text_dark, $i)};
+                }
+            }
+        }
+
+        /*!
+         * Color Pallettes
+         */
+        #content {
+            .has-sheee-accent-pink-color {
+                color: #{nth($colors_accent, $i)};
+            }
+
+            .has-sheee-accent-pink-background-color {
+                background-color: #{nth($colors_accent, $i)};
+            }
+
+            .has-sheee-dark-pink-color {
+                color: #{nth($colors_accent_dark, $i)};
+            }
+
+            .has-sheee-dark-pink-background-color {
+                background-color: #{nth($colors_accent_dark, $i)};
+            }
+
+            .has-sheee-light-gray-color {
+                color: #{nth($colors_text_light, $i)};
+            }
+
+            .has-sheee-light-gray-background-color {
+                background-color: #{nth($colors_text_dark, $i)};
+            }
+
+            .has-sheee-dark-gray-color {
+                color: #{nth($colors_text_light, $i)};
+            }
+            .has-sheee-dark-gray-background-color {
+                background-color: #{nth($colors_text_light, $i)};
+            }
+        }
+
+        /*!
+         * Gutenberg elements
+         */
+        #content ul:not(.tp-revslider-mainul) {
+            li {
+                color: #{nth($colors_text_dark, $i)};
+            }
+        }
+
+        #content .sheee-formation {
+            h2 {
+                background-color: #{nth($colors_accent_transparent, $i)};
+            }
+        }
+
+        #content .sheee-formation:hover {
+            h2 {
+                background-color: #{nth($colors_accent, $i)};
+            }
+        }
+
+        #content .sheee-imagebanner {
+            .overlay {
+                background-color: #{nth($colors_accent_transparent, $i)};
+            }
+
+            .cta-wrapper {
+                a {
+                    background-color: #{nth($colors_accent_dark, $i)};
+                    color: #{nth($colors_text_light, $i)};
+                }
+
+                a:hover {
+                    background-color: #{nth($colors_accent, $i)}
+                }
+            }
+
+            h2,
+            p {
+                color: #{nth($colors_text_light, $i)};
+            }
+
+        }
+
+        #content ul.bg-pink {
+            background-color: #{nth($colors_accent, $i)};
+
+            li {
+                color: #{nth($colors_text_light, $i)};
+            }
+        }
+
+        /*!
+         * Forms
+         */
+        #content form {
+            input[type=text],
+            input[type=email] {
+                border-bottom: 1px solid #{nth($colors_accent_dark, $i)};
+            }
+
+            input::placeholder {
+                color: #{nth($colors_accent_dark, $i)};
+            }
+
+            input[type=submit] {
+                background-color: #{nth($colors_accent, $i)};
+                color: #{nth($colors_text_light, $i)};
+            }
+
+            input[type=submit]:hover {
+                background-color: #{nth($colors_accent_dark, $i)};
+            }
+        }
+
+        /*!
+         * Easy Testimonial
+         */
+        #content .easy-t-slideshow-wrap {
+            .cycle-slideshow {
+                color: #{nth($colors_text_light, $i)};
+            }
+        }
+
+        #content .easy-t-slideshow-wrap .cycle-slideshow::before {
+            color: #{nth($colors_accent, $i)};
+        }
+
+        #content .easy-t-slideshow-wrap .cycle-slideshow::after {
+            color: #{nth($colors_accent, $i)};
+        }
+
+        /*!
+         * Forms
+         */
+        .site-footer {
+            .menu {
+                a {
+                    color: #{nth($colors_text_dark, $i)};
+                }
+            }
         }
     }
 }

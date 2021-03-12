@@ -3,7 +3,7 @@ Theme Name: Sheee 2
 Author: Stefan Dürrenberger, IDM Studios GmbH
 Author URI: http://idm-studios.ch
 Description: Sheee Theme 2018
-Version: 1.0.0
+Version: 1.1.0
 License: GNU General Public License v2 or later
 Text Domain: sheee
 
@@ -63,6 +63,7 @@ Uses Normalize: https://necolas.github.io/normalize.css/
 # Elements
 --------------------------------------------------------------*/
 @import "elements/elements";
+@import "elements/color-palettes";
 @import "elements/audioplayer";
 
 /*--------------------------------------------------------------
