@@ -31,20 +31,37 @@ $color_accent_transparent_sarahhuber: rgba(39, 136, 186, .7);
 $color_accent_header_sarahhuber: rgba(39, 136, 186, 0.9);
 $color_accent_dark_sarahhuber: rgb(26, 82, 114);
 
-$color_text_dark_sarahhuber: rgba(19, 65, 86, 0.88); /* #53062a */
+$color_text_dark_sarahhuber: rgba(19, 65, 86, 0.88); /*  */
 $color_text_light_sarahhuber: rgb(255, 255, 255); /* #ffffff */
+
+$color_accent_musikteamevents: rgba(227, 70, 22, 0.9);
+$color_accent_transparent_musikteamevents: rgba(231, 60, 42, 0.65);
+$color_accent_header_musikteamevents: rgba(227, 70, 22, 0.9);
+$color_accent_dark_musikteamevents: rgba(180, 21, 10, 0.9);
+
+/*
+$color_accent_musikteamevents: rgba(128, 32, 238, 0.9);
+$color_accent_transparent_musikteamevents: rgba(128, 32, 238, 0.7);
+$color_accent_header_musikteamevents: rgba(128, 32, 238, 0.9);
+$color_accent_dark_musikteamevents: rgba(93, 8, 189, 0.9);
+*/
+$color-test: #E34616;
+
+$color_text_dark_musikteamevents: rgba(47, 9, 17, 0.95); /*  */
+$color_text_light_musikteamevents: rgb(255, 255, 255); /* #ffffff */
 
 /* Variable list for loops */
 $selector_colorscheme_sarahhuber: ".color-scheme-sarahhuber";
-$schema_names: sarahhuber;
-$selectors: $selector_colorscheme_sarahhuber;
-$colors_accent: $color_accent_sarahhuber;
-$colors_accent_transparent: $color_accent_transparent_sarahhuber;
-$colors_accent_header: $color_accent_header_sarahhuber;
-$colors_accent_dark: $color_accent_dark_sarahhuber;
+$selector_colorscheme_musikteamevents: ".color-scheme-musikteamevents";
+$schema_names: sarahhuber, musikteamevents;
+$selectors: $selector_colorscheme_sarahhuber, $selector_colorscheme_musikteamevents;
+$colors_accent: $color_accent_sarahhuber, $color_accent_musikteamevents;
+$colors_accent_transparent: $color_accent_transparent_sarahhuber, $color_accent_transparent_musikteamevents;
+$colors_accent_header: $color_accent_header_sarahhuber, $color_accent_header_musikteamevents;
+$colors_accent_dark: $color_accent_dark_sarahhuber, $color_accent_dark_musikteamevents;
 
-$colors_text_dark: $color_text_dark_sarahhuber;
-$colors_text_light: $color_text_light_sarahhuber;
+$colors_text_dark: $color_text_dark_sarahhuber, $color_text_dark_musikteamevents;
+$colors_text_light: $color_text_light_sarahhuber, $color_text_light_musikteamevents;
 
 /* Dummy code to output all color schemes in a loop */
 /* Color Schemes */

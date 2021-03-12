@@ -39,6 +39,7 @@ function sheee_theme_options_page() {
                         <select name="sheee_theme_options[color_scheme]">
                             <option value="sheee" <?php echo $options['color_scheme'] == 'sheee' ? 'selected' : '' ?>>Sheee</option>
                             <option value="sarahhuber" <?php echo $options['color_scheme'] == 'sarahhuber' ? 'selected' : '' ?>>Sarah Huber</option>
+                            <option value="musikteamevents" <?php echo $options['color_scheme'] == 'musikteamevents' ? 'selected' : '' ?>>Musikteamevents</option>
                         </select>
                     </td>
                 </tr>
